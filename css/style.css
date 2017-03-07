@@ -1,0 +1,792 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Setting the theme
+
+    1.1. General Layout
+    1.2. body 
+	1.3. Link Style Reset 
+	1.4. Header  
+	1.5. Paragraph 
+        
+2. Top-Navigation
+        
+3.  Interactive Slider
+
+    3.1. Interactive Slider identifer
+    3.2. Interactive Slider classes
+
+4. Main Content
+
+    4.1. Main Content Full Rows 
+    4.2. Half Rows (includes form formatting)
+    4.3. Third Rows (includes form formatting)
+    4.4. Additional row formatting
+	
+    4.5. Main-content tables
+
+5.0. Footer
+
+    5.1 Footer format
+
+6. Media Query
+
+    6.1 Media query (min-width: 768px) and (max-width: 830px)
+    6.2 Media query (min-width: 767px) and (max-width: 1023px)
+    6.3 Media query (min-width: 1024px) and (max-width: 1200px)
+
+
+Designed to
+=========================================
+
+- Some Accessiblity  considered 
+
+        o  Label "for"
+        o  Captions 
+        o  Alt tags have been added
+        o  Scales elements from  767px to 1200px screens (works to even a smaller size screen but may have inconstiencies such as the table will not fit at around 368px)
+        o  Additional readjustments for even smaller screen sizes 
+        o  HTML5 sematic tags will allow newer screen readers to target certain area e.g. navigation through more meaninful tags.
+        o  lumia 640 phone - tested (has a higher pixel density, which makes portrait a 320ish pixel display, however no issue with landscape 533px)
+        o  Heading structure from 1 to 3 has been used in content
+        o  Deleted CSS to check HTML layout, every page follows a logical layout 
+
+- Theme  (Contrasting, repeition, alignment and proxmity)
+
+        o Contrasting shades of green, black, white has been used to create more noticeable navigation 
+        o Repetition with the elements such as navigation and site map, create a easier to use navigation, similar layout on each page 
+        o Alignment has used to position importance of elements 
+        o Proxmity has been used (white space, but in this case the black space) to separeate groups of elements 
+
+- Range of HTML5
+        o Additional text tags (em (homepage), strong)
+        o Meta tags (viewport etc)
+        o HTML5 sematic elements (Header, Nav, Article, Section, Footer)
+        o List tags ( ul, ol,  li)
+        o Image tags (img, src, alt)
+        o links ( a, href)
+        o Forms ( label, input types, text, radio, input, range submit autofocus)
+        o table (Caption, tr, th, td, colspan)
+        o identifer (header, main nav etc)
+        o Classes (main-content-half-row)
+        o HTML5 Validated 
+            - index.html        No warnings or errors
+            - text.html         No warnings or errors
+            - table.html        Mo warnings or errors
+            - forms.html        No warnings or errors
+            - validation.html   No warnings or errors
+
+-  CSS features 
+        o Documented CSS
+        o You know what? I have no easy way to explain what CSS I have used
+
+- Future implementations Considered (see CSS Below)
+
+Audience consideration
+
+    - Older browsers
+        I have included a identifter selector for all new sematic tags due to the the tags not being recognised in older browsers
+
+    Solutions 
+        
+        - Force producing the elements with javaScript, document.createElement("elementname")
+        - using HTML5 SHIV framework, allows  html5 elements to work in  Internet Explorer 6-9, Safari 4.x (and iPhone 3.x), and Firefox 3.x.
+        - create a ID and set display:block and add other formatting rather than formatting on the element itself.
+
+However these are all JavaScript based solutions, apart from the last one and personally I have no way to test if that one works
+        
+
+
+
+	
+-------------------------------------------------------------------*/
+/***************************
+1.1 General Layout
+***************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/***************************
+1.2. Body
+***************************/
+body {
+    float: left;
+    font-family: "Trebuchet MS",Helvetica,sans-serif;
+    background: #000;
+        width: 100%;
+}
+
+/***************************
+1.3. Link style 
+***************************/
+a:link {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/***************************
+1.4. Header
+***************************/
+header {
+    float: left;
+    width: 100%;
+    background: #26A139;
+}
+
+#header {
+    float: left;
+    width: 100%;
+    background: #26A139; 
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.5em;
+}
+
+/***************************
+1.5. paragraph
+***************************/
+p {
+    line-height: 1.3em;
+    margin-top: 1em;
+}
+
+/***************************
+2.0 Top Navigation
+***************************/
+#main-nav {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main-nav ul {
+    list-style: none;
+    text-align: center;
+    background: #12511A;
+    padding-top: 1%;
+    border-bottom: 5px solid #8ECF97;
+}
+
+#main-nav ul li {
+    display: inline-block;
+    padding: 1% 2%;
+}
+
+#main-nav li:first-child {
+    list-style: none;
+    text-align: center;
+    padding-top: 1%;
+    border-radius: 5px 0 0 5px;
+}
+
+#main-nav li {
+    background: #000;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+#main-nav li:last-of-type {
+    border-radius: 0 5px 5px 0;
+}
+
+#main-nav a {
+    color: #fff;
+}
+
+#main-nav > img {
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-nav li:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47,2.02,0.31,-0.36);
+    transition-timing-function: cubic-bezier(0.47,2.02,0.31,-0.36);
+}
+
+/***************************
+3.0 Interactive Slider
+***************************/
+.interactive-slider-gradient {
+    background: -o-linear-gradient(top,#8ECF97 0%,#12511A 8%,#26A138 100%);
+    background: -moz-linear-gradient(top,#8ECF97 0%,#12511A 8%,#26A138 100%);
+    background: -webkit-linear-gradient(top,#8ECF97 0%,#12511A 8%,#26A138 100%);
+    background: -ms-linear-gradient(top,#8ECF97 0%,#12511A 8%,#26A138 100%);
+    background: linear-gradient(to top,#8ECF97 0%,#12511A 8%,#26A138 100%);
+}
+
+/***************************
+3.1 Interactive Slider identifer
+***************************/
+#interactive-slider {
+    float: left;
+    width: 100%;
+}
+
+#interactive-slider-effects ul {
+    float: left;
+}
+
+#interactive-slider li:hover .interactive-slider {
+    margin: -85px 0 0 45px;
+    -webkit-transform: rotateY(0deg);
+    -webkit-box-shadow: 0 5px 10px #888;
+}
+
+#interactive-slider li {
+    width: 22%;
+    background: none;
+    display: inline;
+    float: left;
+    -webkit-perspective: 500;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition-property: perspective;
+    -webkit-transition-duration: .5s;
+    margin: 2% 5%;
+}
+
+#interactive-slider-effects li:hover {
+    -webkit-perspective: 5000;
+}
+
+#interactive-slider li img {
+    width: 100%;
+    border: 10px solid #8ECF97;
+    -webkit-transform: rotateY(30deg);
+    -moz-box-shadow: 0 3px 10px #888;
+    -webkit-box-shadow: 0 3px 10px #888;
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: .5s;
+}
+
+#interactive-slider li:hover img {
+    -webkit-transform: rotateY(0deg);
+}
+
+/***************************
+3.2 Interactive Slider classes
+***************************/
+.interactive-slider-info {
+    border: 10px solid #8ECF97;
+    width: 100%;
+    background-color: #12511A;
+    padding: 20px;
+    margin: -85px 0 0 45px;
+    position: relative;
+    -moz-box-shadow: 0 20px 40px #26A139;
+    -webkit-box-shadow: 0 20px 40px #26A139;
+    -webkit-transform: translateZ(70px) rotateY(15deg);
+    -webkit-transition-property: transform,box-shadow,margin;
+    -webkit-transition-duration: .5s;
+}
+
+.interactive-slider-info h3 {
+    color: #26A139;
+    font-variant: small-caps;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.interactive-slider-info p {
+    color: #fff;
+    padding-bottom: 15px;
+}
+
+.interactive-slider-info a {
+    background-color: #000;
+    padding: 5px 10px;
+    color: #eee;
+    text-decoration: none;
+    display: block;
+    width: 80px;
+    text-align: center;
+    margin: 0 auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.interactive-slider-info a:hover,.interactive-slider-info a:focus {
+    -webkit-transform: translateZ(70px) rotateY(0deg);
+    background-color: #26A139;
+    color: #fff;
+}
+
+.interactive-slider img {
+    width: 25%;
+}
+
+/***************************
+4.0 Main Content
+***************************/
+#main-content {
+    float: left;
+    width: 100%;
+    margin: 7.5% 0;
+    padding: 0;
+    border-top: 10px solid #8ECF97;
+    border-bottom: 10px solid #8ECF97;
+    background-color: #12511A;
+}
+
+#main-content h1 {
+    color: white;
+}
+
+#main-content h2 {
+    color: #26A139;
+}
+
+#main-content h3 {
+    color: #8ECF97;
+}
+
+#main-content p {
+    color: #fff;
+}
+
+/***************************
+4.1. Main Content Full Rows
+***************************/
+.main-content-full-row {
+    margin: 1%;
+    padding: 1%;
+    width: 96%;
+    float: left;
+}
+
+
+
+.main-content-full-row img {
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.main-content-full-row > h2 {
+    color: #26A139;
+}
+
+.main-content-full-row ol li {
+    color: #fff;
+    margin:0% 2%;
+    padding: 0%;
+    line-height: 1.5em;
+}
+
+
+/***************************
+4.2. Half rows
+***************************/
+
+.main-content-half-row {
+    margin: 1%;
+    padding: 1%;
+    width: 46%;
+    float: left;
+}
+
+
+
+
+
+
+
+.main-content-half-row > h2 {
+    color: #26A139;
+}
+
+.main-content-half-row > h3 {
+    color: #8ECF97;
+}
+
+.main-content-half-row ul li {
+    color: #fff;
+    margin:0% 2%;
+    padding: 0%  1%;
+    line-height: 1.5em;
+}
+
+
+
+
+
+/***************************
+4.3 1/3 row 
+***************************/
+
+.main-content-third-row {
+    margin: 1%;
+    padding: 1%;
+    width: 29%;
+    float: left;
+}
+
+.main-content-third-row > h2 {
+    color: #26A139;
+}
+
+.main-content-third-row > h3 {
+    color: #8ECF97;
+}
+
+.main-content-third-row ul li {
+    color: #fff;
+    padding: 1%;
+    line-height: 1.5em;
+}
+
+
+.main-content-third-row label {
+    Float: left;
+    width: 50%;
+    clear: both;
+    color: white;
+    margin: 0 10%;
+}
+
+.main-content-third-row input {
+    float: left;
+    clear: both;
+    width: 80%;
+    line-height: 1.5em;
+    margin: 1% 10%;
+}
+
+.main-content-third-row textarea{
+    width:90%;
+    height:150px;
+    margin:1% 5%;
+    
+}
+
+.main-content-third-row-submit input{
+    width: 50%;
+    padding: 1% 0%;
+    margin: 3% 13%;
+} 
+
+.main-content-third-row-submit label{
+    width:80%;
+}
+
+/***************************
+4.4. additional row formatting
+***************************/
+
+
+
+#main-content-radio{
+    float:left;
+    clear:none;
+}
+
+#main-content-radio label{
+    float: left;
+    clear: both;
+    width: 60%;
+    margin: 0% 2.5% 2.5%;
+}
+
+#main-content-radio input{
+    float:left;
+    clear:none;
+    width:5%;
+    margin:1% 5%;
+}
+
+.main-content-third-row checkbox{
+    float:left;
+    clear:left;
+}
+
+.input-slider{
+    width:94%;
+    margin:1%;
+    padding:2%;
+}
+
+.donate-output{
+    display:block;
+    float:left;
+    width:100%;
+    text-align: center;
+    font-size:2em;
+    color:white;
+}
+
+.clear-left{
+    clear: left;
+}
+.main-content-header-align-left{
+    text-align: left;
+    display: inline-block;
+    float: left;
+    padding: 2%;
+    width: 96%;
+
+}
+/***************************
+5.2 main-content tables
+***************************/
+
+
+
+#species {
+    float:left;
+    width:80%;
+    margin:0% 10%;
+    border-collapse: collapse;
+    
+}
+
+#species caption{
+    font-size:2em;
+    color:#8ECF97;
+}
+
+#species td{
+        padding: 15px;
+}
+
+
+table#species tr:nth-child(even) {
+    background-color: #8ECF97;
+    color: #000;
+    
+}
+
+table#species tr:nth-child(odd) {
+    background-color: #26A139;
+    color: #fff;
+    padding:1%;
+}
+
+table#species th {
+    background-color: black;
+    color: #fff;
+    padding:1%;
+}
+
+
+/***************************
+5.1 Footer format
+***************************/
+.footer-nav {
+    border-top: 5px solid #8ECF97;
+    background: #12511A;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav ul li {
+    display: inline-block;
+    padding: 1% 2%;
+    list-style: none;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-nav a {
+    color: #fff;
+}
+
+.footer-nav p {
+    text-align: center;
+    color: #fff;
+}
+
+.footer-nav li {
+    background: #000;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.footer-nav li:first-child {
+    list-style: none;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-nav li:last-of-type {
+    border-radius: 0 5px 5px 0;
+}
+
+.footer-nav li:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47,2.02,0.31,-0.36);
+    transition-timing-function: cubic-bezier(0.47,2.02,0.31,-0.36);
+}
+
+/***************************
+6.1 Media query (min-width: 768px) and (max-width: 830px)
+***************************/
+
+@media screen and (min-width: 768px) and (max-width: 830px) {
+    .reference-resize p{
+        font-size:0.9em;
+    }
+}
+
+
+/***************************
+6.2 Media query  (max-width: 1023px)
+***************************/
+@media screen and (max-width: 1023px) {
+#main-nav > img {
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#interactive-slider li {
+    width: 50%;
+    background: none;
+    display: inline;
+    float: left;
+    -webkit-perspective: 500;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition-property: perspective;
+    -webkit-transition-duration: .5s;
+    margin: 5% 25%;
+}
+
+#interactive-slider li img {
+    width: 100%;
+    border: 10px solid #8ECF97;
+    -webkit-transform: rotateY(0deg);
+    -moz-box-shadow: 0 3px 10px #888;
+    -webkit-box-shadow: 0 3px 10px #888;
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: .5s;
+}
+
+.interactive-slider-info {
+    border: 10px solid #8ECF97;
+    width: 100%;
+    background-color: #12511A;
+    padding: 20px;
+    margin: -40px 0 0 -20px;
+    position: relative;
+    -moz-box-shadow: 0 20px 40px #26A139;
+    -webkit-box-shadow: 0 20px 40px #26A139;
+    -webkit-transform: translateZ(0px) rotateY(0deg);
+    -webkit-transition-property: transform,box-shadow,margin;
+    -webkit-transition-duration: .5s;
+}
+
+.main-content-half-row {
+    margin: 1%;
+    padding: 3%;
+    width: 92%;
+    float: left;
+}
+    
+    .main-content-third-row{
+        width:96%;
+    }
+    
+    .medium-screen-size{
+        clear:none;
+    }
+    
+    .medium-screen-size-no-clear{
+        clear:none;
+    }
+    
+    #main-content ul li{
+        margin:0% 3%;
+    }
+    
+ #main-content ol li{
+        margin:0% 3%;
+    }
+    
+    #species {
+    float:left;
+    width:100%;
+    margin:0% 0%;
+    border-collapse: collapse;
+    
+}
+}
+
+/***************************
+6.3 Media query (min-width: 1024px) and (max-width: 1200px)
+***************************/
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+#main-nav > img {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#interactive-slider li {
+    width: 50%;
+    background: none;
+    display: inline;
+    float: left;
+    -webkit-perspective: 500;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition-property: perspective;
+    -webkit-transition-duration: .5s;
+    margin: 5% 25%;
+}
+    
+    
+    .main-content-third-row{
+        width:46%;
+    }
+    
+    .medium-screen-size{
+        clear:left;
+    }
+    
+    .medium-screen-size-no-clear{
+        clear:none;
+    }
+    
+}
+
+
+

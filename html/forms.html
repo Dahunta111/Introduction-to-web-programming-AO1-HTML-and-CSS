@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Donation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header id ="header">
+            <nav id="main-nav">
+                <img src = "../images/logo.png" alt = "Animal Rescue logo of a silhouette of a horse with a tag line of Make a difference ">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="text.html">Our Story</a>
+                    </li>
+                    <li>
+                        <a href="tables.html">Species</a>
+                    </li>
+                    <li>
+                        <a href="forms.html">Donate</a>
+                    </li>
+                    <li>
+                        <a href="references.html">References </a>
+                    </li>
+                    <li>
+                        <a href="validation.html">Validator</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        
+        <!-- Main Content Points -->
+        
+        <article id ="main-content">
+        
+             <h1>Donating Form</h1>
+            <form class="donate" oninput="x.value=parseInt(a.value)">
+                <section class="main-content-third-row">
+                    <h2 class="main-content-header-align-left">Your Details</h2>
+                
+                        <label for = "firstName">First name:</label>
+                            <input class="input" name="Forename" type="text" id ="firstName" autofocus>
+                        <label for ="SecondName">Last name:</label> 
+                            <input class="input" name="Lastname" type="text" id ="SecondName">
+                        <label for = "email" >Email:</label>
+                            <input class="email" name="email" type="text" id="email">
+                   </section>
+                        
+                    <section class="main-content-third-row" id = "main-content-radio">
+                        <h2 class="main-content-header-align-left">Where would you like your money to go</h2>
+                        <label for = "sloth">Sloth Sanctuary</label>
+                        <input name="cause" type="radio" value="Sloth" id ="sloth"> 
+                        <label for = "horse">Przewalski's horse Sanctuary</label>
+                        <input name="cause" type="radio" value="horse" id=horse> 
+                        <label for ="wildbird">Gymnogyps californianus (wild bird)</label>
+                        <input name="cause" type="radio" value="wildBird" id="wildbird"> 
+                   
+                    </section>
+                
+                <section class="main-content-third-row medium-screen-size">
+                    <h2 class="main-content-header-align-left">How much would you like to contribute?</h2>    
+                    <label for ="amount">Scroll to choose the amount to donate</label>
+                    <input class="input-slider" id="amount" name="a" type="range" value="50">
+                   
+                        <output class="donate-output" for="amount" name="x">£0</output>
+                       
+                  
+                </section>
+                <section class="main-content-third-row clear-left medium-screen-size-no-clear">
+                    
+                        <h2 class="main-content-header-align-left">Any Comments</h2>
+                        <textarea>
+                            
+                        </textarea>
+                </section>
+                     <section class="main-content-third-row main-content-third-row-submit medium-screen-size">
+                    <h2 class="main-content-header-align-left">Confirm Payment</h2>
+                         <label for ="submit">clicking submit will bring you to paypal</label>
+                    <input type="submit" value="Submit" id ="submit">
+                       
+                  
+                </section>
+            </form>
+        </article>
+         <!-- Footer and sitemap -->
+        <footer class="footer-nav">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="text.html">Our Story</a>
+                    </li>
+                    <li>
+                        <a href="tables.html">Species</a>
+                    </li>
+                    <li>
+                        <a href="forms.html">Donate</a>
+                    </li>
+                    <li>
+                        <a href="references.html">References </a>
+                    </li>
+                    <li>
+                        <a href="validation.html">Validator</a>
+                    </li>
+                </ul>
+            </nav>
+            <p> © 2015 Animal Rescue.</p>
+        </footer>
+        
+    </body>
+</html>
